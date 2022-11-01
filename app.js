@@ -1,8 +1,5 @@
-require('colors');
-
-const {mostrarMenu, pausa} = require('./helpers/mensajes');
-
-console.clear();
+import 'colors';
+import  {inquirerMenu,pausa}  from "./helpers/inquirer.js";
 
 const main = async() => {
    
@@ -10,9 +7,12 @@ const main = async() => {
 
     do {
 
-        opt = await mostrarMenu();
+        console.clear();
 
-        if (opt !== '0') await pausa();
+        opt = await inquirerMenu();
+
+        await pausa();
+
     
     } while (opt !== '0');
 
